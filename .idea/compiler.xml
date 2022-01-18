@@ -6,6 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
+=======
+        <module name="lec" />
+>>>>>>> bce7be2078c55ab5e1e553ed75ccb7e85ff0517a
         <module name="lesson9" />
       </profile>
     </annotationProcessing>
