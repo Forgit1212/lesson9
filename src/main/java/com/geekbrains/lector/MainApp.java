@@ -63,6 +63,16 @@ public class MainApp {
         System.out.println(fields[1].get(cat));
         //если хотим изменить значение какого-то поля, порядок такой же:
         fields[1].set(cat, 20);
+        //если поле приватное, поступаем, как с методами
+
+        //Можем создавать объекты:
+        Cat cat2 = (Cat) classCat.newInstance();//для дефолтного конструктора. Если дефолтного конструктора
+        //нет, получим Exception. Если хотим создать объект конструктором с параметрами:
+        Cat cat3 = (Cat) classCat
+                .getConstructor (int.class, int.class, int.class)
+                .newInstance(20,30,40);
+
+        //С помощью Reflection мы можем находу подключать классы, о которых ничего не знаем
 
     }
 }
