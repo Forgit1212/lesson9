@@ -4,7 +4,7 @@ package com.geekbrains.lector;
 public class Cat {
     private int privateField;
     int defaultField;
-    private int publicField;
+    public int publicField;
 
     public Cat(int privateField, int defaultField, int publicField) {
         this.privateField = privateField;
@@ -19,7 +19,7 @@ public class Cat {
         System.out.println("public meow");
     }
 
-    private void privateMeow() {
+    public void privateMeow() {
         System.out.println("private meow");
     }
 }

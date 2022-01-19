@@ -1,9 +1,12 @@
 //Reflection API позволяет запрашивать любые данные любого объекта
 package com.geekbrains.lector;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.Arrays;
 
 public class MainApp {
@@ -73,6 +76,13 @@ public class MainApp {
                 .newInstance(20,30,40);
 
         //С помощью Reflection мы можем находу подключать классы, о которых ничего не знаем
+        //За загрузку классов отвечают лоудеры, с помощью которых мы можем загрузить класс из любого места
+        ClassLoader classLoader = new URLClassLoader(new URL[]{new File("D:/OSPan/Human/src").toURL()});
+        Class humanClass = classLoader.loadClass("Human");
 
+        //Попробуем поработать с Объектом этого класса:
+        Object humanObj = humanClass.getConstructor(String.class, int.class).newInstance("Bob", 30);
+        Method greetingsMethod = humanClass.getDeclaredMethod("greetings");
+        greetingsMethod.invoke(humanObj);
     }
 }
