@@ -77,8 +77,8 @@ public class MainApp {
 
         //С помощью Reflection мы можем находу подключать классы, о которых ничего не знаем
         //За загрузку классов отвечают лоудеры, с помощью которых мы можем загрузить класс из любого места
-        ClassLoader classLoader = new URLClassLoader(new URL[]{new File("D:/OSPan/Human/src").toURL()});
-        Class humanClass = classLoader.loadClass("Human");
+        ClassLoader classLoader = new URLClassLoader(new URL[]{new File("C:/Drivers").toURL()});
+         Class humanClass = classLoader.loadClass("Human");
 
         //Попробуем поработать с Объектом этого класса:
         Object humanObj = humanClass.getConstructor(String.class, int.class).newInstance("Bob", 30);
