@@ -78,11 +78,13 @@ public class MainApp {
         //С помощью Reflection мы можем находу подключать классы, о которых ничего не знаем
         //За загрузку классов отвечают лоудеры, с помощью которых мы можем загрузить класс из любого места
         ClassLoader classLoader = new URLClassLoader(new URL[]{new File("C:/Drivers").toURL()});
-         Class humanClass = classLoader.loadClass("Human");
+        Class humanClass = classLoader.loadClass("Human"); //не работает. Скорее всего надо переопределять Security Manager, который не разрешает
+        //classLoader совершать загрузку.
 
         //Попробуем поработать с Объектом этого класса:
         Object humanObj = humanClass.getConstructor(String.class, int.class).newInstance("Bob", 30);
         Method greetingsMethod = humanClass.getDeclaredMethod("greetings");
         greetingsMethod.invoke(humanObj);
+
     }
 }
