@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class MainApp1 {
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
-        Class testClass = TestClass.class;
+        Class testClass = TestClass.class;//этот код по сути - обработчик аннотаций
         Method[] methods = testClass.getDeclaredMethods();
         for (Method o:methods){
             if(o.isAnnotationPresent(MyAnnotation.class)){
