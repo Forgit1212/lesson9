@@ -23,5 +23,8 @@ public class MainApp1 {
                 executionList.add(o);
             };
         }
+        executionList.sort((o1, o2) -> o2.getAnnotation(MyAnnotation.class).priority() - o1.getAnnotation(MyAnnotation.class).priority());
+        //затем в цикле перебираем отсортированные методы.
+        //Способ через Stream в классе MainApp2.
     }
 }
